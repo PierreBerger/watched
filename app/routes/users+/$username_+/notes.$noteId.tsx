@@ -181,7 +181,7 @@ export function DeleteNote({ id }: { id: string }) {
 				variant="destructive"
 				status={isPending ? 'pending' : actionData?.status ?? 'idle'}
 				disabled={isPending}
-				className="w-full max-md:aspect-square max-md:px-0"
+				className="max-md:aspect-square w-full max-md:px-0"
 			>
 				<Icon name="trash" className="scale-125 max-md:scale-150">
 					<span className="max-md:hidden">Delete</span>

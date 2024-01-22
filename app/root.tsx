@@ -31,6 +31,7 @@ import { HoneypotProvider } from 'remix-utils/honeypot/react'
 import { z } from 'zod'
 import { GeneralErrorBoundary } from './components/error-boundary.tsx'
 import { ErrorList } from './components/forms.tsx'
+import { MainNav } from './components/main-nav.tsx'
 import { EpicProgress } from './components/progress-bar.tsx'
 import { SearchBar } from './components/search-bar.tsx'
 import { useToast } from './components/toaster.tsx'
@@ -121,7 +122,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
 						where: { id: userId },
 					}),
 				{ timings, type: 'find user', desc: 'find user in root' },
-		  )
+			)
 		: null
 	if (userId && !user) {
 		console.info('something weird happened')
@@ -241,6 +242,9 @@ function App() {
 				<header className="container py-6">
 					<nav className="flex flex-wrap items-center justify-between gap-4 sm:flex-nowrap md:gap-8">
 						<Logo />
+
+						<MainNav />
+
 						<div className="ml-auto hidden max-w-sm flex-1 sm:block">
 							{searchBar}
 						</div>
@@ -275,11 +279,8 @@ function App() {
 function Logo() {
 	return (
 		<Link to="/" className="group grid leading-snug">
-			<span className="font-light transition group-hover:-translate-x-1	">
-				epic
-			</span>
 			<span className="font-bold transition group-hover:translate-x-1	">
-				notes
+				Watched
 			</span>
 		</Link>
 	)

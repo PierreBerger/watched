@@ -8,6 +8,9 @@ export default {
 	content: ['./app/**/*.{ts,tsx,jsx,js}'],
 	darkMode: 'class',
 	theme: {
+		aspectRatio: {
+			'2/3': '2 / 3',
+		},
 		container: {
 			center: true,
 			padding: '2rem',
